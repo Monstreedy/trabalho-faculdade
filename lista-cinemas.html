@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoje no Cinema</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hoje no Cinema</h1><br>
+        <nav>
+            <ul>
+                <li class=a1><a href="turismo.html">Início</a></li>
+                <li class=a2><a href="parque-tangua.html">Parque Tanguá</a></li>
+                <li class=a3><a href="jardim-botanico.html">Jardim Botânico</a></li>
+                <li class=a4><a href="lago azul.html">Lago Azul</a></li>
+                <li class=a5><a href="parque-tingui.html">Parque Tingui</a></li>
+                <li class=a6><a href="museu rosa.html">Museu Rosa Cruz</a></li>
+                <li class=a6><a href="bar.html">Restaurantes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex flex-col items-center gap-4 w-full px-32">
+    
+        <div class="card card-side bg-base-100 shadow-xl w-full">
+            <figure class="w-1/3 object-contain h-60">
+              <img
+              class="rounded-lg h-full"
+                src="data:image/png;base64,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"
+                alt="Movie" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">IMAX Palladium Theatre</h2>
+              <p>Bairro: Portão Cidade: Curitiba</p>
+              <div class="rating rating-lg rating-half">
+                <input type="radio" name="rating-10" class="rating-hidden" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="mask mask-star-2 mask-half-1 bg-green-500"
+                  checked="checked" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+              </div>
+              <div class="card-actions justify-end">
+                <button class="btn bg-green-500 text-white">Visitar</button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card card-side bg-base-100 shadow-xl w-full">
+            <figure class="w-1/3 object-contain h-60">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR74F-29jOKwki91K0X11fQNWRPiSaGfjHVyg&s"
+                alt="Movie" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">UCI Palladium</h2>
+              <p>Bairro: Portão Cidade: Curitiba</p>
+              <div class="rating rating-lg rating-half">
+                <input type="radio" name="rating-10" class="rating-hidden" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="mask mask-star-2 mask-half-1 bg-green-500"
+                  checked="checked" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+              </div>
+              <div class="card-actions justify-end">
+                <button class="btn bg-green-500 text-white">Visitar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-side bg-base-100 shadow-xl w-full">
+            <figure class="w-1/3 object-contain h-60">
+              <img
+                src="https://br.web.img3.acsta.net/img/0d/01/0d015452580292b33bc7d00af63f5940.png"
+                alt="Movie" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Cinesystem Shopping Total</h2>
+              <p>Bairro: Portão Cidade: Curitiba</p>
+              <div class="rating rating-lg rating-half">
+                <input type="radio" name="rating-10" class="rating-hidden" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="mask mask-star-2 mask-half-1 bg-green-500"
+                  checked="checked" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+              </div>
+              <div class="card-actions justify-end">
+                <button class="btn bg-green-500 text-white">Visitar</button>
+              </div>
+            </div>
+          </div>
+            
+          <div class="card card-side bg-base-100 shadow-xl w-full">
+            <figure class="w-1/3 object-contain h-60">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt="Movie" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Cineplus Xaxim</h2>
+              <p>Bairro: Xaxim Cidade: Curitiba</p>
+              <div class="rating rating-lg rating-half">
+                <input type="radio" name="rating-10" class="rating-hidden" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="mask mask-star-2 mask-half-1 bg-green-500"
+                  checked="checked" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+              </div>
+              <div class="card-actions justify-end">
+                <button class="btn bg-green-500 text-white">Visitar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-side bg-base-100 shadow-xl w-full">
+            <figure class="w-1/3 object-contain h-60">
+              <img
+                src="https://br.web.img2.acsta.net/r_234_234/img/49/60/4960bea90b9c9f1fb8f1cf7ebcd09287.jpg"
+                alt="Movie" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Cinemark Shopping Mueller</h2>
+              <p>Bairro: Centro Cidade: Curitiba</p>
+              <div class="rating rating-lg rating-half">
+                <input type="radio" name="rating-10" class="rating-hidden" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="mask mask-star-2 mask-half-1 bg-green-500"
+                  checked="checked" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+              </div>
+              <div class="card-actions justify-end">
+                <button class="btn bg-green-500 text-white">Visitar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-side bg-base-100 shadow-xl w-full">
+            <figure class="w-1/3 object-contain h-60 rounded-lg">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4G0JjLcFaIEIOwF_bLoiSgYWv82ZlrWenpQ&s"
+                alt="Movie" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Cinépolis Pátio Batel
+              </h2>
+              <p>Bairro: Batel Cidade: Curitiba</p>
+              <div class="rating rating-lg rating-half">
+                <input type="radio" name="rating-10" class="rating-hidden" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input
+                  type="radio"
+                  name="rating-10"
+                  class="mask mask-star-2 mask-half-1 bg-green-500"
+                  checked="checked" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
+                <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
+              </div>
+              <div class="card-actions justify-end">
+                <button class="btn bg-green-500 text-white">Visitar</button>
+              </div>
+            </div>
+          </div>
+          
+    </main>
+    
+</body>
+</html>
