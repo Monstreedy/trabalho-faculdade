@@ -3,67 +3,55 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" crossorigin></script>
-    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoje no Cinema</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <header>
+    <header class="flex px-4 justify-between items-center">
         <h1>Hoje no Cinema</h1><br>
-        <nav>
+        <nav class="flex gap-4">
             <ul>
-                <li class=a1><a href="turismo.html">Início</a></li>
-                <li class=a2><a href="parque-tangua.html">Parque Tanguá</a></li>
-                <li class=a3><a href="jardim-botanico.html">Jardim Botânico</a></li>
-                <li class=a4><a href="lago azul.html">Lago Azul</a></li>
-                <li class=a5><a href="parque-tingui.html">Parque Tingui</a></li>
-                <li class=a6><a href="museu rosa.html">Museu Rosa Cruz</a></li>
-                <li class=a6><a href="bar.html">Restaurantes</a></li>
+                <li class=a1><a href="index.html">Em cartaz</a></li>
+                <li class=a2><a href="lista-cinemas.html">Cinemas</a></li>
+                <li class=a3><a href="formulario.html">Receba atualizações</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="flex flex-col items-center">
-        <div id="root"></div>
-        <p class="text-2xl">
-            Filmes em cartaz
-        </p>
-        <div class="divider"></div>
-        <div id="movie-list"></div> 
-    
-        
-
-
+    <main class="flex flex-col items-center p-0" id="root">
     </main>   
 
     <script type="text/babel" data-presets="react,stage-3">
-        function MovieItem({title, overview, img}) {
+        function MovieItem({movie, setMovie}) {
             return (
-                <div class="card card-side bg-white shadow-xl">
+                <div class="card card-side h-60 bg-white shadow-xl">
                     <figure class="!w-1/3 object-contain h-60">
                     <img
-                        src={"https://image.tmdb.org/t/p/w300" + img}
-                        alt="Movie" />
+                        src={"https://image.tmdb.org/t/p/w780" + movie.backdrop_path}
+                        alt="Movie" 
+                    />
                     </figure>
 
-                    <div class="card-body">
-                        <h2 class="card-title">{title}</h2>
-                        <p>{overview}</p>
+                    <div class="card-body flex-1 overflow-ellipsis">
+                        <h2 class="card-title">{movie.title}</h2>
+                        <p>{movie.overview}</p>
                         <div class="card-actions justify-end">
-                            <button class="btn btn-primary max-w">Ver mais</button>
+                            <button class="btn btn-primary max-w" onClick={()=>setMovie(movie)}>Ver mais</button>
                         </div>
                     </div>
                 </div>
             )
         }
 
-        function MovieList(){
+        function MovieList({setMovie}){
             const [movies, setMovies] = React.useState([]);
 
             React.useEffect(()=>{
@@ -82,30 +70,91 @@
                 .then(res => res.json())
                 .then(data => {
                     setMovies(data.results);  
+                    // setMovie(data.results[0]);
                 })
                 .catch(err => console.error(err));
             },[movies])
 
             return (
-                <div id="movie-list" class="px-32 flex flex-col gap-4">
-                    { movies.map((movie) => (
-                        <MovieItem 
-                            key={movie.id}
-                            title={movie.title}
-                            overview={movie.overview}
-                            img={movie.backdrop_path}
-                        />
-                    ))}
+                <div class="p-8">
+                    <p class="text-6xl">Em cartaz</p>
+                    <div class="divider my-8"/>
+                    <div id="movie-list" class="px-32 flex flex-col gap-4">
+                        { movies.map((movie) => {
+
+                            if (movie.overview != "")
+                            {
+                                return <MovieItem 
+                                        key={movie.id}
+                                        movie={movie}
+                                        setMovie={setMovie}
+                                        />
+                            }   
+                        })}
+                    </div>
                 </div>
             )
         }
 
-        // Render the component to the DOM
+        function ShowMovie({movie, setMovie})
+        {
+            return (
+                <div class="w-full h-full">
+                    { /* Hero */}
+                    <div
+                        className="hero h-full text-white"
+                        style={{
+                            backgroundImage: `url('https://image.tmdb.org/t/p/original${movie.backdrop_path}')`,
+                        }}>
+
+                        <div className="hero-overlay bg-black bg-opacity-60"></div>
+
+                        <div className="hero-content text-center flex-col gap-8">
+                            <div className="max-w-screen-md flex flex-col gap-8">
+                                <h1 className="mb-5 !text-6xl font-bold text-white">
+                                    {movie.title}
+                                </h1>                            
+                                <p class="text-white">{movie.overview}</p>
+        
+                            </div>
+                            <div class="flex gap-4 justify-between w-1/2">
+                                <a href={`https://www.youtube.com/results?search_query=trailer+${movie.original_title.replaceAll(" ", "+")}`}
+                                    class="btn btn-primary"
+                                    target="_blank"
+                                >
+                                    Assistir ao trailer
+                                </a>
+                                <button className="btn btn-primary" onClick={()=>setMovie(null)}>Voltar</button>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        
+                    </div>
+                    
+                </div>
+            )
+        }
+        
+        function Page()
+        {
+            const [movie, setMovie] = React.useState()
+            
+            return (
+                <>
+                {
+                    movie == null ?
+                    <MovieList setMovie={setMovie}/> :
+                    <ShowMovie movie={movie} setMovie={setMovie}/>               
+                }
+                </>
+            )
+        }
 
         const container = document.getElementById("root")
         const root = ReactDOM.createRoot(container)
 
-        root.render(<MovieList />);
+        root.render(<Page />);
     </script>
 
     <script>
