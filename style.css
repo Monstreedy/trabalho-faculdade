@@ -7,11 +7,20 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     background-color: #f0f0f0 !important;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     
 }
 
 header * {
     color: white !important;
+}
+
+
+main {
+    flex: 1;
+    overflow-y: auto;
 }
 
 h1{
