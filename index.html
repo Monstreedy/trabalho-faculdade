@@ -108,26 +108,5 @@
         root.render(<MovieList />);
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const url = 'https://api.themoviedb.org/3/movie/now_playing?language=pt-BRS&page=1';
-            
-            const options = {
-            method: 'GET',
-            headers: {
-                accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZGExZjgwOGM3YTE4YWVjMWQ1N2FkYjYzMGVjMTIxYSIsIm5iZiI6MTczMjA2ODY4OS42NDYxMTk4LCJzdWIiOiI2NzNkNDI1ZjA3MWJhNmRjZTk5MmIxOGUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.lbuWkIQg-TZJstW2Dm9Hyu7sJOtvVtjDvSB9d-g2AYw'
-            }
-            };
-
-            fetch(url, options)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                
-            })
-            .catch(err => console.error(err));
-        });
-    </script>
 </body>
 </html>
