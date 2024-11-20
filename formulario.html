@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" crossorigin></script>
+
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoje no Cinema</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hoje no Cinema</h1><br>
+        <nav>
+            <ul>
+                <li class=a1><a href="turismo.html">Início</a></li>
+                <li class=a2><a href="parque-tangua.html">Parque Tanguá</a></li>
+                <li class=a3><a href="jardim-botanico.html">Jardim Botânico</a></li>
+                <li class=a4><a href="lago azul.html">Lago Azul</a></li>
+                <li class=a5><a href="parque-tingui.html">Parque Tingui</a></li>
+                <li class=a6><a href="museu rosa.html">Museu Rosa Cruz</a></li>
+                <li class=a6><a href="bar.html">Restaurantes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex flex-col items-center gap-4 w-full px-32" id="root">
+       <h1>Formulário</h1> 
+
+       <form action="/index.html">
+            <label for="fname" class="input input-bordered flex items-center gap-2">
+                Nome:
+                <input type="text" id="fname" name="fname" class="grow" placeholder="Seu nome"><br>
+            </label> <br>
+
+            <label for="email" class="input input-bordered flex items-center gap-2">
+                Email:
+                <input type="text" id="email" name="email" class="grow" placeholder="Email"><br>
+            </label><br>
+
+            <label for="telefone" class="input input-bordered flex items-center gap-2">
+                Telefone:
+                <input type="text" id="telefone" name="telefone" class="grow" placeholder="(41)999999999" ><br>
+            </label><br>
+            
+
+            <label for="tema" class="input input-bordered flex items-center gap-2">
+                Tema de prefência:
+                <input type="text" id="tema" name="tema" class="grow" placeholder="Exemplo Terror"><br>
+            </label><br>
+            
+            <label for="local" class="input input-bordered flex items-center gap-2">
+                Cinema de preferência:
+                <input type="text" id="local" name="local" class="grow" placeholder="Exemplo IMAX Palladium"><br>
+            </label><br>
+            <input type="submit" value="Enviar" class="btn btn-primary" >
+       </form>
+    </main>
+    
+</body>
+</html>
